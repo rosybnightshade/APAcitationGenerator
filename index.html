@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Citation Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="citation.css">
+  </head>
+  <body>
+    <div class="whole-form">
+    <h1>APA Citation Generator </h1>
+
+    <form id="form" onsubmit="return completeCitation()">
+        <fieldset>
+        <legend>Author Credentials</legend>
+        <div id="add" hidden>
+          <label for="an">Author's Last Name</label>
+          <input type="text" placeholder="Doe" name="an" id="an" />
+
+          <label for="in">Author's First Initial</label>
+          <input type="text" placeholder="J" name="in" id="in" /><br />
+        </div>
+
+        <div id="govAdd" hidden>
+            <label>Government Instituion</label>
+            <input type="text" placeholder="US Department of Education" id="gov" />
+        </div>
+            <!--buttons for easy adding and subtracting of sources-->
+        <button id="addButton" type="button" onclick="addAuthors()">Add (Named Author)</button>
+        <button id="deleteButton" type="button" onclick="deleteAuthors()">Remove (Named Author)</button><br>
+
+        <button id="addGovButton" type="button" onclick="addGovAuthors()">Add (Government Source)</button>
+        <button id="deleteGovButton" type="button" onclick="deleteGovAuthors()">Remove (Government Source)</button><br>
+
+        </fieldset>
+
+        <fieldset>
+        <legend>Additional Information</legend>
+        <label for="year">Year Published</label>
+        <input
+          type="text"
+          placeholder="2024"
+          name="year"
+          id="year"
+          required
+        /><br />
+
+        <label for="title">Title of Article</label>
+        <input
+          type="text"
+          placeholder="Neuroscience Continues"
+          name="title"
+          id="title"
+          required
+        /><br />
+
+        <label for="url">Retrieved From...</label>
+        <input
+          type="url"
+          placeholder="https://www.w3schools.com/js/tryit.asp?filename=tryjs_object_constructor3"
+          name="url"
+          id="url"
+          required
+        /><br />
+    </fieldset>
+
+      <button type="submit">Submit</button><br>
+
+      <p id="citation"></p>
+
+      <script>
+        document.getElementById("form").addEventListener("submit", (e) => { e.preventDefault(); });
+        function completeCitation() {
+
+          //required variables for output
+          let articleName = document.getElementById("title").value;
+          let publishingYear = document.getElementById("year").value;
+          let retrievedFrom = document.getElementById("url").value;
+          // first if/else variables : what kind of author is it?
+          let authorLastName = document.getElementById("an").value;
+          let authorFirstInitial = document.getElementById("in").value;
+          // let govDepo = document.getElementById("gov").value;
+
+            document.getElementById("citation").innerHTML = `${authorLastName}, ${authorFirstInitial}. (${publishingYear}). <i>${articleName}</i> Retrieved From ${retrievedFrom}`
+        }
+        function addAuthors() {
+            var showField = document.getElementById("add");
+
+            showField.style.display = "block";
+                }
+          function deleteAuthors(){
+            var showField = document.getElementById("add");
+
+            showField.style.display = "none";
+                }
+          function addGovAuthors() {
+            var showField2 = document.getElementById("govAdd");
+
+            showField2.style.display = "block";
+          }
+          function deleteGovAuthors() {
+            var showField2 = document.getElementById("govAdd");
+
+            showField2.style.display = "none";
+          }
+      </script>
+    </form>
+    </div>
+  </body>
+</html>
