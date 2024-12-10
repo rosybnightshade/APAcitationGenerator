@@ -1,0 +1,48 @@
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #010129;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+    color-scheme: dark;
+    background-color: #9d9dba;
+}
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+:-ms-input-placeholder {
+    color: white;
+}
+input, button, legend, fieldset {
+    padding: 5px;
+    margin: 5px;
+}
+#title::placeholder {
+    font-style: italic;
+}
+#in {
+    width: 10%;
+}
+#in::placeholder {
+    text-align:center
+}
+h1, p {
+    color:white;
+    background-color: black;
+}
+.whole-form {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items:center;
+    align-items:center;
+}

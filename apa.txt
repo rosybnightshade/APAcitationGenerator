@@ -1,0 +1,23 @@
+THIS IS A FILE FOR NOTES SO I REMEMBER WHAT IM DOING AND OVERHAULS GO OKAY IF THEY FAIL
+ 
+ 
+ <!--buttons for easy adding and subtracting of sources-->
+        <!-- <button id="addButton" type="button" onclick="addAuthors()">Add (Named Author)</button>
+        <button id="deleteButton" type="button" onclick="deleteAuthors()">Remove (Named Author)</button><br>
+
+        <button id="addGovButton" type="button" onclick="addGovAuthors()">Add (Government Source)</button>
+        <button id="deleteGovButton" type="button" onclick="deleteGovAuthors()">Remove (Government Source)</button><br> -->
+
+        <div id="add" hidden>
+          <label for="an">Author's Last Name</label>
+          <input type="text" placeholder="Doe" name="an" id="an" />
+
+          <label for="in">Author's First Initial</label>
+          <input type="text" placeholder="J" name="in" id="in" /><br />
+        </div>
+
+        <div id="govAdd" hidden>
+            <label>Government Instituion</label>
+            <input type="text" placeholder="US Department of Education" />
+        </div>
+
