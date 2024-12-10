@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Citation Generator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="citation.css">
+    <link rel="stylesheet" href="apa.css">
   </head>
-  <body>
+  <body onload="console.log('Bananas!')">
     <div class="whole-form">
     <h1>APA Citation Generator </h1>
 
     <form id="form" onsubmit="return completeCitation()">
         <fieldset>
         <legend>Author Credentials</legend>
-        <div id="add" hidden>
-          <label for="an">Author's Last Name</label>
-          <input type="text" placeholder="Doe" name="an" id="an" />
-
-          <label for="in">Author's First Initial</label>
-          <input type="text" placeholder="J" name="in" id="in" /><br />
-        </div>
+          <div id="add"></div> 
+          <div id="add1"></div>
+          <div id="add2"></div>
+          <div id="add3"></div>
+          <div id="add4"></div>
+          <div id="add5"></div>
 
         <div id="govAdd" hidden>
             <label>Government Instituion</label>
             <input type="text" placeholder="US Department of Education" id="gov" />
-        </div>
+        </div> 
+
             <!--buttons for easy adding and subtracting of sources-->
         <button id="addButton" type="button" onclick="addAuthors()">Add (Named Author)</button>
         <button id="deleteButton" type="button" onclick="deleteAuthors()">Remove (Named Author)</button><br>
@@ -34,7 +34,7 @@
         <button id="deleteGovButton" type="button" onclick="deleteGovAuthors()">Remove (Government Source)</button><br>
 
         </fieldset>
-
+            <!--addtional information: tbd-->
         <fieldset>
         <legend>Additional Information</legend>
         <label for="year">Year Published</label>
@@ -84,22 +84,13 @@
 
             document.getElementById("citation").innerHTML = `${authorLastName}, ${authorFirstInitial}. (${publishingYear}). <i>${articleName}</i> Retrieved From ${retrievedFrom}`
         }
-        function addAuthors() {
-            var showField = document.getElementById("add");
+        function addAuthors() {document.getElementById("add").innerHTML = '<label for="an">Authors Last Name</label>';
 
-            showField.style.display = "block";
-                }
-          function deleteAuthors(){
-            var showField = document.getElementById("add");
 
-            showField.style.display = "none";
-                }
-          function addGovAuthors() {
-            var showField2 = document.getElementById("govAdd");
-
-            showField2.style.display = "block";
-          }
-          function deleteGovAuthors() {
+        }
+        function deleteAuthors(){}
+        function addGovAuthors() {}
+        function deleteGovAuthors() {
             var showField2 = document.getElementById("govAdd");
 
             showField2.style.display = "none";
