@@ -14,12 +14,10 @@
     <form id="form" onsubmit="return completeCitation()">
         <fieldset>
         <legend>Author Credentials</legend>
-          <div id="add"></div> 
-          <div id="add1"></div>
-          <div id="add2"></div>
-          <div id="add3"></div>
-          <div id="add4"></div>
-          <div id="add5"></div>
+        <label>Author First Name</label>
+        <input type="text" placeholder="Doe" id="an" />
+        <label>Author Last Initial</label>
+            <input type="text" placeholder="J" id="in" />
 
         <div id="govAdd" hidden>
             <label>Government Instituion</label>
@@ -82,14 +80,12 @@
           let authorFirstInitial = document.getElementById("in").value;
           // let govDepo = document.getElementById("gov").value;
 
-            document.getElementById("citation").innerHTML = `${authorLastName}, ${authorFirstInitial}. (${publishingYear}). <i>${articleName}</i> Retrieved From ${retrievedFrom}`
+          
+          document.getElementById("citation").innerHTML = `${authorLastName}, ${authorFirstInitial}. (${publishingYear}). <i>${articleName}</i> Retrieved From ${retrievedFrom}`
         }
-        function addAuthors() {document.getElementById("add").innerHTML = '<label for="an">Authors Last Name</label>';
-
-
+        function addAuthors() {
+          
         }
-        function deleteAuthors(){}
-        function addGovAuthors() {}
         function deleteGovAuthors() {
             var showField2 = document.getElementById("govAdd");
 

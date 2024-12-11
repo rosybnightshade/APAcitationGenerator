@@ -21,3 +21,13 @@ THIS IS A FILE FOR NOTES SO I REMEMBER WHAT IM DOING AND OVERHAULS GO OKAY IF TH
             <input type="text" placeholder="US Department of Education" />
         </div>
 
+
+
+        if (authorLastName == "" && authorFirstInital == "") {
+              console.log("test passed");
+          }
+          else {
+            console.log("not passed");
+          }
+
+
